@@ -26,9 +26,6 @@ public class PaqueteServicio extends Paquete {
 		this.tipo = tipo;
 	}
 
-	public boolean esDeServicio() {
-		return true;
-	}
 
 	public boolean tieneTipoValido() {
 		return tipo == "WHO" || tipo == "ICMPRequest" || tipo == "IMCPResponse" || tipo == "SendMessage";

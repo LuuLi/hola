@@ -1,3 +1,4 @@
+
 package tp;
 
 public abstract class Paquete {
@@ -35,6 +36,6 @@ public abstract class Paquete {
 		this.ttl = ttl;
 	}
 
-	public abstract boolean esDeServicio();
+	
 
 }

@@ -1,7 +1,5 @@
 package tp;
 
 public abstract class Dispositivo {
-
-	public abstract void Recibir(Paquete p);
-
+	public abstract void recibir(Paquete p);
 }

@@ -22,7 +22,7 @@ public class Hub extends Dispositivo {
 			System.out.println("El dispositivo ya se encuentra conectado al hub");
 		}
 	}
-
+	
 	public void Recibir(Paquete p) {
 		ReenviarPaquete(p);
 	}

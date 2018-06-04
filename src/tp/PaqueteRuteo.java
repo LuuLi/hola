@@ -16,8 +16,5 @@ public class PaqueteRuteo extends Paquete {
 		return p;
 	}
 
-	public boolean esDeServicio() {
-		return false;
-	}
 
 }
