@@ -4,22 +4,20 @@ import java.util.ArrayList;
 
 public class Terminal extends Dispositivo {
 	private String dispositivo;
-	private String nombreSO;
-	private String versionSO;
+	private SOTerminal sistema;
 	private Hub interfaz;
 	private ArrayList<IP> direcciones;
 	private IP defaultGateway;
 	
-	public Terminal(String Disp, String NSO, String VSO, Hub inter, ArrayList<IP> direc, IP DG){
-		dispositivo = Disp;
-		nombreSO = NSO;
-		versionSO = VSO;
+	public Terminal(String disp, SOTerminal sist, Hub inter, ArrayList<IP> direc, IP dg){
+		dispositivo = disp;
+		sistema = sist;
 		interfaz = inter;
 		direcciones = direc;
-		defaultGateway = DG;
+		defaultGateway = dg;
 	}
 	
-	public void EnvioPaquete(Paquete p) {
+/*	public void EnvioPaquete(Paquete p) {
 		if (direcciones.contains(p.ipDest)){
 			obtenerTerminal(p.ipDest);
 		} else {
@@ -27,14 +25,14 @@ public class Terminal extends Dispositivo {
 		} 
 		//interfaz
 	}
-	
+*/	
 	public void recibir(Paquete p) {
 		if (direcciones.contains(p.getIpDest())){
 			//ver ttl
 			if (p instanceof PaqueteServicio) {
-				if ( ((PaqueteServicio) p).tieneTipoValido()) {
-					tratarPaquete((PaqueteServicio) p);//en sistema operativo
-				}
+			
+					sistema.tratarPaquete(p);
+				
 			}
 		}
 	}
@@ -42,5 +40,5 @@ public class Terminal extends Dispositivo {
 	
 }
 
-	}
+
 

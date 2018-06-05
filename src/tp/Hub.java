@@ -6,7 +6,7 @@ public class Hub extends Dispositivo {
 
 	private ArrayList<Dispositivo> puertos;
 	private static int cantPuertos;
-
+	
 	public Hub(int cant) {
 		cantPuertos = cant;
 	}
@@ -23,13 +23,14 @@ public class Hub extends Dispositivo {
 		}
 	}
 	
-	public void Recibir(Paquete p) {
-		ReenviarPaquete(p);
+	public void recibir(Paquete p) {
+		reenviarPaquete(p);
 	}
 
-	public void ReenviarPaquete(Paquete P) {
+	public void reenviarPaquete(Paquete P) {
 		for (Dispositivo x : puertos) {
-			x.Recibir(P);
+			x.recibir(P);
 		}
 	}
+
 }
